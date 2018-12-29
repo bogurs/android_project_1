@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "838996280523",
+    "firebase_url": "https://management-56a8b.firebaseio.com",
+    "project_id": "management-56a8b",
+    "storage_bucket": "management-56a8b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838996280523:android:9d659638d99de0a6",
+        "android_client_info": {
+          "package_name": "projectone.navy.com.management"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "838996280523-dsq3rsocu4uhn3ug214d6vqclbgatr36.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPdaptkIdPNOIZtxN7iYqCZDkhdbYPLWI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

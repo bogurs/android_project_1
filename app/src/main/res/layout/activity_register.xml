@@ -17,24 +17,24 @@
     <EditText
             android:layout_width="360dp"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:ems="10"
-            android:layout_below="@+id/idText" android:layout_alignStart="@+id/idText"
-            android:id="@+id/passwordText" android:hint="비밀번호"/>
+            android:id="@+id/passwordText" android:layout_below="@+id/idText"
+            android:layout_centerHorizontal="true" android:hint="비밀번호"/>
     <EditText
             android:layout_width="360dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:layout_below="@+id/passwordText" android:layout_alignStart="@+id/idText"
-            android:id="@+id/nameText" android:hint="이름"/>
+            android:id="@+id/nameText" android:hint="이름" android:layout_centerHorizontal="true"
+            android:layout_above="@+id/ageText" android:layout_marginBottom="-159dp"/>
     <EditText
             android:layout_width="360dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:layout_below="@+id/nameText" android:layout_alignStart="@+id/idText"
-            android:id="@+id/ageText" android:hint="나이"/>
+            android:id="@+id/ageText" android:hint="나이" android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true" android:layout_marginTop="159dp"/>
     <Button
             android:text="회원가입"
             android:layout_width="360dp"
