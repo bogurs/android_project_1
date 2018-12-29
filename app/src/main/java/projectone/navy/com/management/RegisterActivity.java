@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import projectone.navy.com.management.vo.User;
 
@@ -15,7 +16,7 @@ import java.util.Date;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private FirebaseDatabase firebaseDatabase; // Firebase Database 사용을 위한 멤버 객체
+    private DatabaseReference databaseReference; // Database 사용을 위한 멤버 객체
 
     private EditText idText;    // User의 id값 멤버 변수
     private EditText passwordText; // User의 password값 멤버 변수
@@ -28,7 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
 
         registerUser();
     }
@@ -48,11 +49,15 @@ public class RegisterActivity extends AppCompatActivity {
                 String userName = nameText.getText().toString();
                 int userAge = Integer.parseInt(ageText.getText().toString());
 
-                User user = new User(userId, userPw, userName, userAge, new Date().getTime());
+                User user = new User();
+                user.setUserId(userId);
+                user.setUserPw(userPw);
+                user.setUserName(userName);
+                user.setUserAge(userAge);
+                user.setCreateDate(new Date().getTime());
 
-                firebaseDatabase
-                        .getReference("users/" + userId)
-                        .push()
+                databaseReference
+                        .child("users/" + userId)
                         .setValue(user)
                         .addOnSuccessListener(RegisterActivity.this, new OnSuccessListener<Void>() {
                             @Override

@@ -8,14 +8,6 @@ public class User {
     private int userAge;
     private long createDate, updateDate;
 
-    public User(String userId, String userPw, String userName, int userAge, long createDate) {
-        this.userId = userId;
-        this.userPw = userPw;
-        this.userName = userName;
-        this.userAge = userAge;
-        this.createDate = createDate;
-    }
-
     public String getUserId() {
         return userId;
     }
