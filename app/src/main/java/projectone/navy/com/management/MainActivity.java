@@ -52,7 +52,11 @@ public class MainActivity extends AppCompatActivity {
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 ArrayList<User> userList = new ArrayList<>();
                                 for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
-                                    userList.add(userSnapshot.getValue(User.class));
+                                    User nowUser = userSnapshot.getValue(User.class);
+                                    if ("admin".equals(nowUser.getUserId())) {
+                                        continue;
+                                    }
+                                    userList.add(nowUser);
                                 }
 
                                 Intent intent = new Intent(MainActivity.this, ManagementActivity.class);

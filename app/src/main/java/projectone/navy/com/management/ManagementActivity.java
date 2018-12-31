@@ -21,7 +21,7 @@ public class ManagementActivity extends AppCompatActivity {
         ArrayList<User> userList = (ArrayList<User>)  getIntent().getSerializableExtra("userList");
         listView = findViewById(R.id.listView);
 
-        adapter = new UserListAdapter(getApplicationContext(), userList);
+        adapter = new UserListAdapter(getApplicationContext(), userList, this);
         listView.setAdapter(adapter);
     }
 }

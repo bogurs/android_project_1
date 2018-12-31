@@ -49,6 +49,11 @@ public class LoginActivity extends AppCompatActivity {
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 String dbUserPw;
                                 User user = dataSnapshot.getValue(User.class);
+                                if (user == null) { // 회원정보가 존재하지 않는 경우
+                                    Toast.makeText(getApplicationContext(), "회원정보가 존재하지 않습니다.", Toast.LENGTH_LONG).show();
+                                    return;
+                                }
+
                                 dbUserPw = user.getUserPw();
                                 if (dbUserPw != null && dbUserPw.equals(passwordText.getText().toString())) {
                                     Toast.makeText(getApplicationContext(), "로그인 되었습니다.", Toast.LENGTH_LONG).show();

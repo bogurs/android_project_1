@@ -63,7 +63,7 @@ public class RegisterActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(Void aVoid) {
                                 Toast.makeText(getApplicationContext(), "계정 생성 완료. 로그인해주세요.", Toast.LENGTH_LONG).show();
-                                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                                finish();
                             }
                         });
             }
