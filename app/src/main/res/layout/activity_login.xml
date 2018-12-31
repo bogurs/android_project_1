@@ -13,10 +13,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:textSize="55dp"
-            android:text="로그인 화면"
+            android:text="스케쥴 쉐어"
             android:textColor="@color/colorWhite"
             android:textStyle="bold"
             android:layout_margin="50dp"
+            android:drawableRight="@drawable/ic_forum_black_24dp"
     />
 
     <EditText
@@ -30,6 +31,8 @@
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
             android:background="@drawable/edittext_login"
+            android:drawableLeft="@drawable/ic_person_black_24dp"
+
     />
     <EditText
             android:layout_width="match_parent"
@@ -44,6 +47,7 @@
             android:layout_marginRight="32dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/edittext_login"
+            android:drawableLeft="@drawable/ic_lock_black_24dp"
     />
 
     <Button
@@ -56,8 +60,9 @@
             android:layout_marginRight="32dp"
             android:layout_marginTop="40dp"
             android:background="@drawable/button_login"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/colorGray"
             android:layout_gravity="center_horizontal"
+            android:drawableRight="@drawable/ic_arrow_downward_black_24dp"
     />
     <TextView
             android:layout_width="wrap_content"
@@ -69,5 +74,6 @@
             android:layout_gravity="center_horizontal"
             android:textColor="@color/colorWhite"
             android:layout_marginTop="15dp"
+            android:drawableRight="@drawable/ic_input_black_24dp"
     />
 </LinearLayout>
