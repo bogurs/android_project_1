@@ -98,7 +98,6 @@ public class UserListAdapter extends BaseAdapter {
                     public void onClick(DialogInterface dialog, int which) {
                         //취소
                         Toast.makeText(parentActivity, "삭제 취소", Toast.LENGTH_SHORT).show();
-                        return;
                     }
                 });
                 AlertDialog deleteAlertDialog = deleteAlertBuilder.create();
