@@ -2,9 +2,9 @@
 <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
         tools:context=".MainActivity">
 
     <TextView
@@ -13,34 +13,51 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true" android:layout_marginTop="18dp"
             android:id="@+id/welcomeMessage" android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:layout_centerHorizontal="true"/>
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/colorWhite"/>
     <TextView
-            android:text="아이디"
-            android:layout_width="360dp"
+            android:text="당신의 아이디"
+            android:layout_width="130dp"
             android:layout_height="wrap_content" android:layout_below="@+id/welcomeMessage"
             android:layout_alignStart="@+id/welcomeMessage" android:id="@+id/textView2"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+            android:background="@drawable/textview_main"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="10dp"
+    />
     <TextView
             android:text="TextView"
             android:layout_width="360dp"
             android:layout_height="wrap_content" android:layout_below="@+id/textView2"
             android:layout_alignStart="@+id/welcomeMessage" android:id="@+id/idText"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorWhite"
+    />
     <TextView
-            android:text="비밀번호"
-            android:layout_width="360dp"
+            android:text="당신의 비밀번호"
+            android:layout_width="130dp"
             android:layout_height="wrap_content" android:layout_below="@+id/idText"
             android:layout_alignStart="@+id/welcomeMessage" android:id="@+id/textView4"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+            android:background="@drawable/textview_main"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="10dp"/>
     <TextView
             android:text="TextView"
             android:layout_width="360dp"
             android:layout_height="wrap_content" android:layout_below="@+id/textView4"
             android:layout_alignStart="@+id/welcomeMessage" android:id="@+id/passwordText"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorWhite"/>
     <Button
             android:text="회원관리"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:layout_centerInParent="true"
-            android:id="@+id/managementButton"/>
+            android:id="@+id/managementButton"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorGray"
+            android:background="@drawable/button_login"
+    />
 </RelativeLayout>
