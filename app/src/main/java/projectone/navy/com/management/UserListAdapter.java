@@ -45,7 +45,7 @@ public class UserListAdapter extends BaseAdapter {
         userId.setText(userList.get(position).getUserId());
         userPw.setText(userList.get(position).getUserPw());
         userName.setText(userList.get(position).getUserName());
-        userAge.setText(userList.get(position).getUserAge());
+        userAge.setText(Integer.toString(userList.get(position).getUserAge()));
 
         view.setTag(userList.get(position).getUserId());
         return view;
