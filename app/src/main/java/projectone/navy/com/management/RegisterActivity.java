@@ -16,8 +16,6 @@ import java.util.Date;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private DatabaseReference databaseReference; // Database 사용을 위한 멤버 객체
-
     private EditText idText;    // User의 id값 멤버 변수
     private EditText passwordText; // User의 password값 멤버 변수
     private EditText nameText;   // User의 name값 멤버 변수
@@ -33,7 +31,6 @@ public class RegisterActivity extends AppCompatActivity {
         passwordText = findViewById(R.id.passwordText);
         nameText = findViewById(R.id.nameText);
         ageText = findViewById(R.id.ageText);
-        databaseReference = FirebaseDatabase.getInstance().getReference();
 
         registerUser();
         checkValidateUserId();
@@ -53,12 +50,13 @@ public class RegisterActivity extends AppCompatActivity {
                 if ("".equals(userId)) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
                     AlertDialog dialog = builder.setMessage("아이디는 빈 칸일 수 없습니다.")
-                            .setPositiveButton("확인", null)
+                            .setNegativeButton("확인", null)
                             .create();
                     dialog.show();
                     return;
                 }
 
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
                 databaseReference
                         .child("users/" + userId)
                         .addListenerForSingleValueEvent(new ValueEventListener() {
@@ -102,15 +100,35 @@ public class RegisterActivity extends AppCompatActivity {
                 String userId = idText.getText().toString();
                 String userPw = passwordText.getText().toString();
                 String userName = nameText.getText().toString();
-                int userAge = Integer.parseInt(ageText.getText().toString());
+                String userAge = ageText.getText().toString();
+
+                if (!validate) { // 아이디 중복체크를 진행하지 않은 경우
+                    AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                    AlertDialog dialog = builder.setMessage("먼저 중복 체크를 해주세요.")
+                            .setNegativeButton("확인", null)
+                            .create();
+                    dialog.show();
+                    return;
+                }
+
+                if ("".equals(userId) || "".equals(userPw) ||
+                        "".equals(userName) || "".equals(userAge)) { // 빈 칸이 존재하는 경우
+                    AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                    AlertDialog dialog = builder.setMessage("빈 칸 없이 입력해주세요.")
+                            .setNegativeButton("확인", null)
+                            .create();
+                    dialog.show();
+                    return;
+                }
 
                 User user = new User();
                 user.setUserId(userId);
                 user.setUserPw(userPw);
                 user.setUserName(userName);
-                user.setUserAge(userAge);
+                user.setUserAge(Integer.parseInt(userAge));
                 user.setCreateDate(new Date().getTime());
 
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
                 databaseReference
                         .child("users/" + userId)
                         .setValue(user)
